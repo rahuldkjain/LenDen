@@ -1,0 +1,10 @@
+create trigger sellupload
+after insert on s_product
+for each row
+insert into selluploaddur VALUES(new.p_id, CURRENT_TIMESTAMP());
+
+
+create trigger rentupload
+after insert on r_product
+for each row
+insert into rentuploaddur VALUES(new.p_id, CURRENT_TIMESTAMP());
